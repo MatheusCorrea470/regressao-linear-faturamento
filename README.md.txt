@@ -16,4 +16,4 @@ Projeto em Python aplicando regressão linear manual e com bibliotecas.
 - Gera gráficos
 
 ## 👨‍💻 Autor
-Matheus Saturnino
+Matheus Saturnino🪐
