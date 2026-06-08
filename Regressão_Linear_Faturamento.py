@@ -22,13 +22,17 @@ data = pd.DataFrame({
 # ==============================
 # 3. VISUALIZAÇÃO INICIAL
 # ==============================
+
+plt.figure(figsize=(8,5))
+           
 x = data['mes']
 y = data['faturamento']
 
-plt.scatter(x, y)
+plt.scatter(x, y, color='blue', label='Dados reais')
 plt.title("Faturamento por mês")
 plt.xlabel("Mês")
 plt.ylabel("Faturamento")
+
 
 # Correlação
 print("Correlação:\n", data.corr())
@@ -62,7 +66,7 @@ print(f"Previsão para mês {x_pred}: {y_pred:.2f}")
 #  6. GRÁFICO COM REGRESSÃO
 # ==============================
 
-plt.plot(x, data['predicao'], color='red')
+plt.plot(x, data['predicao'], color='red', label='Regressão Linear')
 
 # ==============================
 # 7. MÉTRICAS (R² E RMSE)
@@ -91,8 +95,8 @@ print("RMSE:", round(rmse,4))
 # 8. INTERVALOS (DESVIO)
 # ==============================
 
-plt.plot(x, data['predicao'] + rmse, '--', color='purple', label='+1 RMSE')
-plt.plot(x, data['predicao'] - rmse, '--', color='purple', label='-1 RMSE')
+plt.plot(x, data['predicao'] + rmse, '--', color='purple', label='Intervalo de erro (+1 RMSE)')
+plt.plot(x, data['predicao'] - rmse, '--', color='purple', label='Intervalo de erro (-1 RMSE)')
 
 plt.legend()
 plt.show()
@@ -138,7 +142,7 @@ print("RMSE:", rmse_sk)
 # 11. COMPARAÇÃO FINAL
 # ==============================
 
-print("\nComparação das predições:")
+print("\nComparação das predições:\n")
 print("Manual:", data['predicao'].values)
 print("Statsmodels:", sm_pred)
 print("Sklearn:", sk_pred)
@@ -174,4 +178,6 @@ plt.xlabel("Mês")
 plt.ylabel("Faturamento Previsto")
 plt.legend()
 
+
+plt.grid(alpha=0.3)
 plt.show()
