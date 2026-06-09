@@ -1,5 +1,3 @@
-# regressao-linear-faturamento
-
 # 📊 Regressão Linear para Previsão de Faturamento
 
 Projeto em Python aplicando regressão linear manual e com bibliotecas.
